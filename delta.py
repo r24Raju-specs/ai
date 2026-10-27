@@ -17,3 +17,17 @@ for epoch in range(100):
 print("Weights:", w)
 print("Bias:", b)
 print("Predictions:", np.round(X @ w + b))
+
+#hebbian rule
+import numpy as np
+
+X = np.array([[1, 0], [0, 1], [1, 1]])
+
+w = np.zeros(2)
+lr = 0.1
+
+for x in X:
+    y = np.dot(w, x)
+    w += lr * y * x
+
+print("Final Weights:", w)
